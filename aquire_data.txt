@@ -1,0 +1,22 @@
+2024-11-04T17:38:59 prefetch.3.1.1: 1) Resolving 'SRR12749778'...
+2024-11-04T17:39:00 prefetch.3.1.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2024-11-04T17:39:00 prefetch.3.1.1: 1) Downloading 'SRR12749778'...
+2024-11-04T17:39:00 prefetch.3.1.1:  SRA Normalized Format file is being retrieved
+2024-11-04T17:39:00 prefetch.3.1.1:  Downloading via HTTPS...
+2024-11-04T17:39:53 prefetch.3.1.1:  HTTPS download succeed
+2024-11-04T17:39:56 prefetch.3.1.1:  'SRR12749778' is valid: 1594598209 bytes were streamed from 1594592469
+2024-11-04T17:39:56 prefetch.3.1.1: 1) 'SRR12749778' was downloaded successfully
+spots read      : 36,754,799
+reads read      : 36,754,799
+reads written   : 36,754,799
+2024-11-04T17:40:54 prefetch.3.1.1: 1) Resolving 'SRR12749779'...
+2024-11-04T17:40:55 prefetch.3.1.1: Current preference is set to retrieve SRA Normalized Format files with full base quality scores
+2024-11-04T17:40:55 prefetch.3.1.1: 1) Downloading 'SRR12749779'...
+2024-11-04T17:40:55 prefetch.3.1.1:  SRA Normalized Format file is being retrieved
+2024-11-04T17:40:55 prefetch.3.1.1:  Downloading via HTTPS...
+2024-11-04T17:42:02 prefetch.3.1.1:  HTTPS download succeed
+2024-11-04T17:42:06 prefetch.3.1.1:  'SRR12749779' is valid: 1942482016 bytes were streamed from 1942478489
+2024-11-04T17:42:06 prefetch.3.1.1: 1) 'SRR12749779' was downloaded successfully
+spots read      : 44,943,587
+reads read      : 44,943,587
+reads written   : 44,943,587
