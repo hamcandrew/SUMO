@@ -1,0 +1,24 @@
+#load libraries
+library(BiocManager)
+library(DESeq2)
+library(ggplot2)
+library(pheatmap)
+#create counts matrix and metadata
+counts_matrix <- read.delim(url, row.names = 1)
+metadata <- data.frame(condition = c("parous", "nulliparous"), row.names = colnames(counts_matrix))
+#make the DESeq2 database
+dds <- DESeqDataSetFromMatrix(countData = counts_matrix, colData = metadata, design = ~ condition)
+dds <- DESeq(dds)
+dds <- DESeqDataSetFromMatrix(countData = counts_matrix, colData = metadata, design = ~ condition)
+dds
+#perform Variance Stabilizing Transformation 
+vsd <- vst(dds, blind = TRUE)
+pca_data <- plotPCA(vsd, intgroup = "condition", returnData = TRUE)
+#Make PCA Plot
+ggplot(pca_data, aes(x = PC1, y = PC2, color = condition)) + geom_point(size = 3) + xlab(paste0("PC1: ", round(100 * pca_data$percentVar[1]), "% variance")) + ylab(paste0("PC2: ", round(100 * pca_data$percentVar[2]), "% variance")) + theme_minimal() + ggtitle("PCA of gene expression data")
+vsd_matrix <- assay(vsd)
+#filter to top twenty genes
+top_var_genes_twenty <- order(rowVars(vsd_matrix), decreasing = TRUE)[1:20]
+#make heatmap
+pheatmap(vsd_matrix[top_var_genes_twenty, ], annotation_col = metadata, fontsize_col = 6,angle_col = 45)
+
